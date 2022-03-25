@@ -7,7 +7,7 @@ import requests
 import os
 
 
-
+port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 
@@ -156,7 +156,7 @@ def showBookList():
 
 
 #33507 5004
-app.run(threaded=True,host='0.0.0.0', port=5000)
+app.run(threaded=True,host='0.0.0.0', port=port)
 #app.run()
 #app.run(threaded=True)
 #app.run(debug=True, host='books-main-app.herokuapp.com')
