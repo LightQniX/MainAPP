@@ -160,5 +160,5 @@ def showBookList():
 
 #33507 5004
 
-
-app.run(debug=True, host='localhost', port=33507)
+app.run(threaded=True, port=5000)
+#app.run(debug=True, host='localhost', port=33507)
