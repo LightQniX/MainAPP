@@ -4,10 +4,12 @@ import json
 import random
 import string
 import requests
+import os
+from pml import app
 
 
 
-
+port = int(os.environ.get('PORT', 5000))
 
 
 
@@ -160,5 +162,6 @@ def showBookList():
 
 #33507 5004
 
-app.run(threaded=True)
+app.run(host='0.0.0.0', port=port)
+#app.run(threaded=True)
 #app.run(debug=True, host='books-main-app.herokuapp.com')
