@@ -162,6 +162,6 @@ def showBookList():
 
 #33507 5004
 
-app.run(host='0.0.0.0', port=port)
+app.run()
 #app.run(threaded=True)
 #app.run(debug=True, host='books-main-app.herokuapp.com')
