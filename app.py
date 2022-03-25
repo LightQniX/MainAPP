@@ -33,7 +33,7 @@ def lonig():
     password = request.args.get('password')
 
     try:
-        req = requests.get(f'http://localhost:5003/login?login={login}&password={password}', cookies=request.cookies)
+        req = requests.get(f'https://books-auth-app.herokuapp.com/login?login={login}&password={password}', cookies=request.cookies)
     except:
         return {'main': 'auth service is not available'}, 504
 
@@ -55,7 +55,7 @@ def lonig():
 @app.route("/logout", methods=["POST", "GET"])
 def logout():
     try:
-        req = requests.get(f'http://localhost:5003/logout', cookies=request.cookies)
+        req = requests.get(f'https://books-auth-app.herokuapp.com/logout', cookies=request.cookies)
     except:
         return {'main': 'auth service is not available'}, 504
 
@@ -76,7 +76,7 @@ def register():
     nickname = request.args.get('nickname')
 
     try:
-        req = requests.get(f'http://localhost:5003/register?login={login}&password={password}&nickname={nickname}')
+        req = requests.get(f'https://books-auth-app.herokuapp.com/https://books-review-appl.herokuapp.com/register?login={login}&password={password}&nickname={nickname}')
     except:
         return {'main': 'auth service is not available'}, 504
 
@@ -93,7 +93,7 @@ def register():
 @app.route("/show/<id>", methods=["POST", "GET"])
 def showReviews(id):
     try:
-        req = requests.get(f'http://localhost:5002/getReview/{id}')
+        req = requests.get(f'https://books-review-appl.herokuapp.com/getReview/{id}')
     except:
         return {'main': 'reviews service is not available'}, 504
 
@@ -113,7 +113,7 @@ def writeReview(id):
     }
 
     try:
-        req = requests.post(f'http://localhost:5002/saveReview/{id}', json=data)
+        req = requests.post(f'https://books-review-appl.herokuapp.com/saveReview/{id}', json=data)
     except:
         return {'main': 'reviews service is not available'}, 504
 
@@ -131,7 +131,7 @@ def deleteReview(id):
     }
 
     try:
-        req = requests.post(f'http://localhost:5002/deleteReview/{id}', json=data)
+        req = requests.post(f'https://books-review-appl.herokuapp.com/https://books-library-appl.herokuapp.com/deleteReview/{id}', json=data)
     except:
         return {'main': 'reviews service is not available'}, 504
 
@@ -148,7 +148,7 @@ def deleteReview(id):
 def showBookList():
 
     try:
-        req = requests.get(f'http://localhost:5001/getBookList')
+        req = requests.get(f'https://books-library-appl.herokuapp.com/getBookList')
     except:
         return {'main': 'library service is not available'}, 504
 
