@@ -1,1 +1,1 @@
-web: gunicorn books-main-app:main
+web: gunicorn main
