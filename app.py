@@ -5,11 +5,6 @@ import random
 import string
 import requests
 import os
-from pml import app
-
-
-
-port = int(os.getenv('PORT'))
 
 
 
